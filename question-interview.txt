@@ -1,0 +1,4 @@
+Q. How to calculate the number of occurances in a given array
+Q. Calculate the number of occurances of a given charecter and return the first max
+Q. Write a singleton class which is thread safe
+Q. 
