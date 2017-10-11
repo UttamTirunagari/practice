@@ -11,6 +11,8 @@ struct btreenode
 };
 void insert(struct btreenode ** , int );
 void inorder(struct btreenode *);
+void preorder(struct btreenode *);
+void postorder(struct btreenode *);
 
 int main()
 {
@@ -32,6 +34,11 @@ int main()
     cout << "\n In-order traversal: \n";
     inorder(bt);
 
+    cout << "\n pre-order traversal:\n";
+    preorder(bt);
+    
+    cout << "\n post-order traversal:\n";
+    postorder(bt);
     return 0;
 }
 
@@ -66,5 +73,29 @@ void inorder(struct btreenode *sr)
         inorder(sr->rightchild);
     }
     else 
+        return;
+}
+
+void preorder(struct btreenode *sr)
+{
+    if(sr != NULL)
+    {
+        cout << sr->data << "\t";
+        preorder(sr->leftchild);
+        preorder(sr->rightchild);
+    }
+    else 
+        return;
+}
+
+void postorder(struct btreenode *sr)
+{
+    if(sr!= NULL)
+    {
+        postorder(sr->leftchild);
+        postorder(sr->rightchild);
+        cout << sr->data << "\t";
+    }
+    else
         return;
 }
